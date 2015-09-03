@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -49,6 +49,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     debug_inspector (0.0.2)
+    digest (0.0.1)
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -141,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  digest
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.4)
