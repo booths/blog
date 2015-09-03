@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">文章管理</h2>
+  </div>
+  <ul class="list-group">
+
+    <% @docs.each do |doc| %>
+      <li class="list-group-item title">
+        <div class="container-fluid ">
+          <div class="col-md-8 col-sm-8 col-xs-6">
+            <%= link_to doc.title, doc %>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            <%= link_to 'Edit', edit_doc_path(doc) %>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            <%= link_to 'Destroy', doc, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+
+
+
+  </ul>
+</div>
