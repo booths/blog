@@ -1,4 +1,5 @@
 class DocsController < ApplicationController
+  skip_before_filter :authorize, :only => [:show]
   before_action :set_doc, only: [:show, :edit, :update, :destroy]
 
   # GET /docs

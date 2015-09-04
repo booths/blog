@@ -1,6 +1,17 @@
+<h2>
+    <div>文章管理</div>
+</h2>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2 class="panel-title">文章管理</h2>
+    <div class="container-fluid panel-title">
+      <div class="col-md-2">
+    <%= link_to '写文章', new_doc_path %>
+      </div>
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
   </div>
   <ul class="list-group">
 
@@ -11,10 +22,10 @@
             <%= link_to doc.title, doc %>
           </div>
           <div class="col-md-2 col-sm-2 col-xs-3">
-            <%= link_to 'Edit', edit_doc_path(doc) %>
+            <%= link_to '修改', edit_doc_path(doc) %>
           </div>
           <div class="col-md-2 col-sm-2 col-xs-3">
-            <%= link_to 'Destroy', doc, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to '删除', doc, method: :delete, data: { confirm: "确定删除文章: '#{doc.title}' 吗？" } %>
           </div>
         </div>
       </li>

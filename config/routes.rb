@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+  get 'admin' => 'admin#index'
+
+controller :session do
+  get 'login' => :new
+  post 'login' => :create
+  delete 'login' => :destroy
+end
+
   resources :users
   resources :docs
   get 'index' => 'index#show'

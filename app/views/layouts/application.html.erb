@@ -27,6 +27,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            <%if flash[:login_name]%>
+              <li><%= link_to "Admin", admin_url  %></li>
+          <%end%>
             <li class="active"><a class="nei" href="#blog">Blog</a></li>
             <li><a class="nei" href="#about">About</a></li>
             <li><a href="https://github.com/booths">GitHub</a></li>
