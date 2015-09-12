@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>其实我是个演员</title>
     <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/home.css" rel="stylesheet"> </head>
+    <link href="/css/home.css" rel="stylesheet">
+
+  </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
       <div class="container-fluid">
@@ -48,7 +50,8 @@
               <%= yield %>
             </div>
             <div role="tabpanel" class="tab-pane " id="about">
-              <h2>About Me</h2>
+              <h3>About Me</h3>
+              <hr/>
               <p>李云伟</p>
 
             </div>
@@ -66,9 +69,9 @@
     <script src="/js/bootstrap.min.js"></script>
     <script>
 $('#bs-example-navbar-collapse-1 a.nei').click(function (e) {
-  e.preventDefault()
-    $(this).tab('show')
-})
+  e.preventDefault();
+    $(this).tab('show');
+});
     </script>
   </body>
 </html>

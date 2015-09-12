@@ -17,9 +17,23 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <script id="container" name="doc[body]" type="text/plain">
+      <%= sanitize @doc.body %>
+    </script>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+   <!-- 配置文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+onload=function(){
+  window.UEDITOR_HOME_URL = "/ueditor/";
+  var editor = UE.getEditor('container');
+}
+
+    </script>
