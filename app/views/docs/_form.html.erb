@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/css/simditor.css" />
 <%= form_for(@doc) do |f| %>
   <% if @doc.errors.any? %>
     <div id="error_explanation">
@@ -17,23 +18,23 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <script id="container" name="doc[body]" type="text/plain">
-      <%= sanitize @doc.body %>
-    </script>
+    <textarea name="doc[body]" id="editor" placeholder="Balabala" autofocus>
+      <%= @doc.body %>
+    </textarea>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-   <!-- 配置文件 -->
-    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-    <!-- 实例化编辑器 -->
-    <script type="text/javascript">
-onload=function(){
-  window.UEDITOR_HOME_URL = "/ueditor/";
-  var editor = UE.getEditor('container');
-}
+<script type="text/javascript" src="/js/module.min.js"></script>
+<script type="text/javascript" src="/js/hotkeys.min.js"></script>
+<script type="text/javascript" src="/js/uploader.min.js"></script>
+<script type="text/javascript" src="/js/simditor.min.js"></script>
 
-    </script>
+<script type="text/javascript">
+var editor = new Simditor({
+  textarea: $('#editor')
+  //optional options
+});
+
+</script>
